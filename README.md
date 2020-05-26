@@ -238,7 +238,7 @@ These tuned models are then trained on the entire training set which includes bo
 ## 4.1 **Conclusions and Interpretations**
 1. The results of the feature selection showed that not all features are necessary. Even with less amount of features we can obtain better accuracy.
 2. My results show that the Support vector regression, Ridge Regression, Linear Reg. failed to perform well. Because of the non-linearity in the data.
-3. Preprocessing plays a better role in obtaining better results.
+3. Preprocessing plays a better role in obtaining best results.
 4. Validation set performance can be generalized to the actual test.
 5.Usage of models on validation set helps us in finding better models rather than trying on entire dataset.
 6.After hyper parameter tuning of the random forest and Adaboost reg. there is a slight increase in the performance but there is a increase in the training error because of generalization.
