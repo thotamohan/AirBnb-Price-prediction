@@ -31,6 +31,7 @@ MAE are used for evaluation. Then the best performing models on the validation s
 are used for hyper parameter tuning and the model performance is calculated on the
 actual test set.
 
+# **Methodology**
 # **3.1 Data Set**
 Dataset consists of 11,340 points and 16 features. Number of features like count of
 Host total listings, Room type, Number of bedrooms, beds and most of the
@@ -157,7 +158,7 @@ random guessing. Then weighted majority vote is done to combine all the
 prediction, so that a final prediction is made. This property might help in better
 prediction results.
 
-# **3.4 Selection and Comparison of Results**
+# **3.6 Selection and Comparison of Results**
 
 Out of the models mentioned above, we could see that the Random Forest Regression and Adaboost regression seemed to have performed well with the default parameters. Hyperparameter tuning is done on the these models to even obtain the better performance on the training and test set.
 ## • Random Forest Model
@@ -166,7 +167,7 @@ Randomized searchCV from scikit learn is used to obtain the best hyper parameter
 Randomized searchCV from scikit learn is used to obtain the best hyper parameters for the Lasso model, the obtained parameters from the abovementioned functions are 0.539 alpha value, fit intercept is true. 
 These tuned models are then trained on the entire training set which includes both training and validation set and tested on actual test data. Then features are selected using Random Forest method and then the models are trained on selected features and tested on actual test data.
 
-## 3.4.1 **Final Results and Interpretation**
+## 3.6.1 **Final Results and Interpretation**
 
 |Model|Training data|Validation data|
 |-----|-------------|---------------|
@@ -196,7 +197,7 @@ These tuned models are then trained on the entire training set which includes bo
 |   | R2: 0.19921550054727677|R2: 0.2197584720208533|
 
 
-## 3.4.2 **Tuned Models**:
+## 3.6.2 **Tuned Models**:
 
 |Tuned Model|Training dataset|Test dataset|
 |-----------|----------|----------|
@@ -209,7 +210,7 @@ These tuned models are then trained on the entire training set which includes bo
 |   |RMSE: 250.57830620710325|RMSE: 282.4967202257806|
 |   | R2: -0.29382758329712644|R2: -0.7112303651306913|
 
-## 3.4.3 **Performance of models after feature selection by Random Forest**:
+## 3.6.3 **Performance of models after feature selection by Random Forest**:
 |Tuned Model|Training dataset|Test dataset|
 |-----------|----------|----------|
 |**Random Forest Regression**|MSE: 50380.92308286226|MSE: 72699.10403067133|
@@ -221,7 +222,7 @@ These tuned models are then trained on the entire training set which includes bo
 |   |RMSE: 250.9789980503825|RMSE:282.9296340772289|
 |   | R2: -0.3254053327707984|R2: -0.7484804416776716|
 
-## 3.4.3 **Performance of models after feature selection by Lasso technique**:
+## 3.6.4 **Performance of models after feature selection by Lasso technique**:
 |Tuned Model|Training dataset|Test dataset|
 |-----------|----------|----------|
 |**Random Forest Regression**|MSE: 50074.08993247161|MSE: 73209.09467790202|
@@ -233,7 +234,8 @@ These tuned models are then trained on the entire training set which includes bo
 |   |RMSE: 249.92769738046465|RMSE:282.0865521507634|
 |   | R2: -0.26101104979870016|R2: R2: -0.6754950063472749|
 
-# 3.5 **Summary and conclusions , Interpretations**
+# 4 **Summary** 
+# 4.1 **Conclusions and Interpretations**
 1. The results of the feature selection showed that not all features are necessary.
 Even with less amount of features we can obtain better accuracy.
 2. My results show that the Support vector regression, Ridge Regression, Linear
