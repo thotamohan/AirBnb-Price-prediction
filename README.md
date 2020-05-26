@@ -120,31 +120,36 @@ namely MSE, RMSE, R2 score.
 the two models are trained using the entire training set (both the training and
 validation set) and are tested on the test set. Metrics used are same as above.
 
-## **3.5 Training Process**
-**1. Linear Regression**
+# **3.5 Training Process**
+
+## 1. Linear Regression
 Linear Regression tries to minimize the sum of square of the error between the
 observed values and predicted values by linear approximation.
 For the implementation of the model, scikit-learn is used, firstly default
 parameters provided by scikit-learn are used to train on the training set and then
 evaluated on validation set. Singular value decomposition of X is used to
 compute the solution by Linear Regression.
-**2. Ridge Regression**
+
+## 2. Ridge Regression
 Ridge Regression is used, because if there is non linear relationship between the
 independent variables which makes the least square estimates unbiased and large
 variances resulting in huge gap between the observed and predicted values. Ridge
 regression handles this non linearity by adding a degree of bias to the estimator
 which reduces the standard errors.
+
 ## 3. Lasso Regression
 Lasso Regression is also similar like Linear Regression, but it uses shrinkage in
 order to reduce the multicollinearity between independent variables. This selects
 the features which are best for the regression shrinking the unimportant feature
 weight values to zero.
+
 ## 4. Random Forest regression
 Several decision trees are created by randomness and they are averaged to obtain
 the final regressor. A random set of samples are drawn with replacement while
 training the final regressor.
 This model also performs feature selection by calculating the feature importance
 and then leaving the features with value equal to zero.
+
 ## 5. Adaboost Regression
 Adaboost fits a sequence of weak learners on data which is modified repeated.
 Weak learners here refer to the small decision trees which predict better than
@@ -152,23 +157,17 @@ random guessing. Then weighted majority vote is done to combine all the
 prediction, so that a final prediction is made. This property might help in better
 prediction results.
 
-## **3.4 Selection and Comparison of Results**
-Out of the models mentioned above, we could see that the Random Forest
-Regression and Adaboost regression seemed to have performed well with the default 
-parameters. Hyperparameter tuning is done on the these models to even obtain the
-better performance on the training and test set.
-**• Random Forest Model**
-Randomized searchCV from scikit learn is used to obtain the best hyper
-parameters for the random forest model, the obtained parameters from the abovementioned functions are 200 number of estimators, maximum depth is 5 and
-criterion used is ‘mse’.
-**• Lasso Model**
-Randomized searchCV from scikit learn is used to obtain the best hyper
-parameters for the Lasso model, the obtained parameters from the abovementioned functions are 0.539 alpha value, fit intercept is true.
-These tuned models are then trained on the entire training set which includes both
-training and validation set and tested on actual test data. Then features are selected
-using Random Forest method and then the models are trained on selected features
-and tested on actual test data.
-**Final Results and Interpretation**
+# **3.4 Selection and Comparison of Results**
+
+Out of the models mentioned above, we could see that the Random Forest Regression and Adaboost regression seemed to have performed well with the default parameters. Hyperparameter tuning is done on the these models to even obtain the better performance on the training and test set.
+## • Random Forest Model
+Randomized searchCV from scikit learn is used to obtain the best hyper parameters for the random forest model, the obtained parameters from the abovementioned functions are 200 number of estimators, maximum depth is 5 and criterion used is ‘mse’.
+## • Lasso Model
+Randomized searchCV from scikit learn is used to obtain the best hyper parameters for the Lasso model, the obtained parameters from the abovementioned functions are 0.539 alpha value, fit intercept is true. 
+These tuned models are then trained on the entire training set which includes both training and validation set and tested on actual test data. Then features are selected using Random Forest method and then the models are trained on selected features and tested on actual test data.
+
+## 3.4.1 **Final Results and Interpretation**
+
 |Model|Training data|Validation data|
 |-----|-------------|---------------|
 |**Linear Regression**|MSE: 72694.07822283143|MSE: 75974.2332240539|
@@ -185,7 +184,29 @@ and tested on actual test data.
 |   | R2: -15.617948354346481|R2: -17.18405102245768|
 |**Random Forest Regression**|MSE: 10450.919193931823|MSE: 57163.49713989214|
 |   |MAE: 50.54620852374578|MAE: MAE: 124.25965257849114|
-|   |RMSE: RMSE: 102.22973732692373|RMSE: 239.0888896203505|
+|   |RMSE:102.22973732692373|RMSE: 239.0888896203505|
 |   | R2: 0.8791710668149424|R2: 0.30185910807466376|
+|**Lasso Regression**|MSE: 72687.80452118929|MSE: 76011.81790707962|
+|   |MAE: 146.2563537956556|MAE: 149.25157396442634|
+|   |RMSE: 269.58147820266703|RMSE: 275.70240823590865|
+|   | R2: -0.6767918627724787|R2: -0.7181451111942903|
+|**Adaboost Regression**|MSE: 94545.81361038845|MSE: 96140.69133130621|
+|   |MAE: 190.20023528698502|MAE: 194.56000295985336|
+|   |RMSE: 307.48302979252117|RMSE: 310.06562423349385|
+|   | R2: 0.19921550054727677|R2: 0.2197584720208533|
+
+
+## 3.4.2 **Tuned Models**:
+
+|Tuned Model|Train data|Valid data|
+|-----------|----------|----------|
+|**Random Forest Regression**|MSE: 50119.60200790658|MSE: 72162.94845239061|
+|   |MAE: 121.03146505838296|MAE: 72162.94845239061|
+|   |RMSE: 223.87407623015795|RMSE: 268.6316222122604|
+|   | R2: 0.11414507716244404|R2: -0.3659939487905348|
+|**Adaboost Regression**|MSE: 62789.487541620794|MSE: 79804.39693832299|
+|   |MAE: 139.7155368840744|MAE: 147.52761854440104|
+|   |RMSE: 250.57830620710325|RMSE: 282.4967202257806|
+|   | R2: -0.29382758329712644|R2: -0.7112303651306913|
 
 
