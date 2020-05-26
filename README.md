@@ -236,11 +236,12 @@ These tuned models are then trained on the entire training set which includes bo
 
 # 4 **Summary** 
 ## 4.1 **Conclusions and Interpretations**
-1. The results of the feature selection showed that not all features are necessary. Even with less amount of features we can obtain better accuracy.
-2. My results show that the Support vector regression, Ridge Regression, Linear Reg. failed to perform well. Because of the non-linearity in the data.
-3. Preprocessing plays a better role in obtaining best results.
-4. Validation set performance can be generalized to the actual test.
-5.Usage of models on validation set helps us in finding better models rather than trying on entire dataset.
-6.After hyper parameter tuning of the random forest and Adaboost reg. there is a slight increase in the performance but there is a increase in the training error because of generalization.
-7.Lasso and random forest feature selection yield better results even with lesser features and reduce computational power.
-8.Hyper parameter tuning plays a better role in getting optimal result that can perform better on test data.
+•	The results of the feature selection showed that not all features are necessary. Even with less number of features we can obtain better accuracy.
+•	My results show that the Support vector regression, Ridge Regression, Linear Reg. failed to perform well. Because of the non-linearity in the data.
+•	Preprocessing plays a better role in obtaining best results.
+•	Validation set performance can be generalized to the actual test.
+•	Usage of models on validation set helps us in finding better models rather than trying on entire dataset.
+•	After hyper parameter tuning of the random forest and Adaboost reg. there is a slight increase in the performance but there is a increase in the training error because of generalization.
+•	Lasso and random forest feature selection yield better results even with lesser features and reduce computational power.
+•	Hyper parameter tuning plays a better role in getting optimal result that can perform better on test data.
+
