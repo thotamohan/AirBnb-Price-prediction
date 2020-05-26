@@ -1,5 +1,5 @@
-# AirBnb-Price-prediction
-==========================
+# Price-prediction of Airbnb properties 
+
 ## **1.Abstract**
 
 The price prediction is crucial to the owners of the website, the property listers and the customers of the website to make informed decisions and in the modifications of the real estate policies. The price of the property listed on Airbnb is dependent on various factors such as Bedrooms, room types, number of guests and many others. The proposed study analyzes the price prediction capabilities of various Machine Learning Algorithms such as Linear Regression, Random Forest Regression, Support Vector Regression, Ridge Regression, and Adaboost Regression. Hyperparameter tuning is done on the models which performed better on the Validation Set. The models are evaluated using four metrics namely mean squared error, mean absolute error, r2 scores, and root mean squared error.         
@@ -198,7 +198,7 @@ These tuned models are then trained on the entire training set which includes bo
 
 ## 3.4.2 **Tuned Models**:
 
-|Tuned Model|Train data|Valid data|
+|Tuned Model|Training dataset|Test dataset|
 |-----------|----------|----------|
 |**Random Forest Regression**|MSE: 50119.60200790658|MSE: 72162.94845239061|
 |   |MAE: 121.03146505838296|MAE: 72162.94845239061|
@@ -209,4 +209,43 @@ These tuned models are then trained on the entire training set which includes bo
 |   |RMSE: 250.57830620710325|RMSE: 282.4967202257806|
 |   | R2: -0.29382758329712644|R2: -0.7112303651306913|
 
+## 3.4.3 **Performance of models after feature selection by Random Forest**:
+|Tuned Model|Training dataset|Test dataset|
+|-----------|----------|----------|
+|**Random Forest Regression**|MSE: 50380.92308286226|MSE: 72699.10403067133|
+|   |MAE: 121.628914377444|MAE: 134.99902596248782|
+|   |RMSE: 224.4569515137864|RMSE: 269.62771376598386|
+|   | R2: 0.10752789914307137|R2: -0.3523680334116106|
+|**Adaboost Regression**|MSE: 62990.45746237391|MSE: 80049.17783907466|
+|   |MAE: 139.95245299387756|MAE: 147.9597960228515|
+|   |RMSE: 250.9789980503825|RMSE:282.9296340772289|
+|   | R2: -0.3254053327707984|R2: -0.7484804416776716|
 
+## 3.4.3 **Performance of models after feature selection by Lasso technique**:
+|Tuned Model|Training dataset|Test dataset|
+|-----------|----------|----------|
+|**Random Forest Regression**|MSE: 50074.08993247161|MSE: 73209.09467790202|
+|   |MAE: 120.98583893348983|MAE: 134.7862854694249|
+|   |RMSE: 223.77240654842055|RMSE: 270.5717920957431|
+|   | R2: 0.11262466988192954|R2: -0.3989555010925063|
+|**Adaboost Regression**|MSE: 62463.85391790112|MSE: 79572.82290430536|
+|   |MAE: 139.93383096384247|MAE: 148.01160643025068|
+|   |RMSE: 249.92769738046465|RMSE:282.0865521507634|
+|   | R2: -0.26101104979870016|R2: R2: -0.6754950063472749|
+
+# 3.5 **Summary and conclusions , Interpretations**
+1. The results of the feature selection showed that not all features are necessary.
+Even with less amount of features we can obtain better accuracy.
+2. My results show that the Support vector regression, Ridge Regression, Linear
+Reg. failed to perform well. Because of the non-linearity in the data.
+3. Preprocessing plays a better role in obtaining better results.
+4. Validation set performance can be generalized to the actual test.
+5.Usage of models on validation set helps us in finding better models rather than
+trying on entire dataset.
+6.After hyper parameter tuning of the random forest and Adaboost reg. there is a
+slight increase in the performance but there is a increase in the training error
+because of generalization.
+7.Lasso and random forest feature selection yield better results even with lesser
+features and reduce computational power.
+8.Hyper parameter tuning plays a better role in getting optimal result that can
+perform better on test data.
