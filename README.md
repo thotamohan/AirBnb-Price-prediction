@@ -31,8 +31,8 @@ MAE are used for evaluation. Then the best performing models on the validation s
 are used for hyper parameter tuning and the model performance is calculated on the
 actual test set.
 
-# **Methodology**
-# **3.1 Data Set**
+# **3.Dataset Description**
+## **3.1 Data Set**
 Dataset consists of 11,340 points and 16 features. Number of features like count of
 Host total listings, Room type, Number of bedrooms, beds and most of the
 important information about the listing is available. Out of all the feature two are
@@ -235,19 +235,12 @@ These tuned models are then trained on the entire training set which includes bo
 |   | R2: -0.26101104979870016|R2: R2: -0.6754950063472749|
 
 # 4 **Summary** 
-# 4.1 **Conclusions and Interpretations**
-1. The results of the feature selection showed that not all features are necessary.
-Even with less amount of features we can obtain better accuracy.
-2. My results show that the Support vector regression, Ridge Regression, Linear
-Reg. failed to perform well. Because of the non-linearity in the data.
+## 4.1 **Conclusions and Interpretations**
+1. The results of the feature selection showed that not all features are necessary. Even with less amount of features we can obtain better accuracy.
+2. My results show that the Support vector regression, Ridge Regression, Linear Reg. failed to perform well. Because of the non-linearity in the data.
 3. Preprocessing plays a better role in obtaining better results.
 4. Validation set performance can be generalized to the actual test.
-5.Usage of models on validation set helps us in finding better models rather than
-trying on entire dataset.
-6.After hyper parameter tuning of the random forest and Adaboost reg. there is a
-slight increase in the performance but there is a increase in the training error
-because of generalization.
-7.Lasso and random forest feature selection yield better results even with lesser
-features and reduce computational power.
-8.Hyper parameter tuning plays a better role in getting optimal result that can
-perform better on test data.
+5.Usage of models on validation set helps us in finding better models rather than trying on entire dataset.
+6.After hyper parameter tuning of the random forest and Adaboost reg. there is a slight increase in the performance but there is a increase in the training error because of generalization.
+7.Lasso and random forest feature selection yield better results even with lesser features and reduce computational power.
+8.Hyper parameter tuning plays a better role in getting optimal result that can perform better on test data.
