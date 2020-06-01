@@ -245,3 +245,7 @@ These tuned models are then trained on the entire training set which includes bo
 7. Lasso and random forest feature selection yield better results even with lesser features and reduce computational power.
 8. Hyper parameter tuning plays a better role in getting optimal result that can perform better on test data.
 
+# **References:**
+
+Special thanks to Prof. Keith Jenkins at University of Southern California for helping me in getting a clear understanding of the BFR algorithm both theoritically and practically.
+
